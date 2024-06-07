@@ -1,10 +1,10 @@
-# Pironman 5
+# Pironman Mini
 
-Pironman 5 case
+Pironman Mini case
 
 Quick Links:
 
-- [Pironman 5](#pironman-5)
+- [Pironman Mini](#pironman-mini)
   - [About Pironman5](#about-pironman5)
   - [Links](#links)
   - [Installation](#installation)
@@ -34,8 +34,8 @@ Execute the installation script
 
 ```bash
 cd ~
-git clone https://github.com/sunfounder/pironman5.git
-cd ~/pironman5
+git clone https://github.com/sunfounder/pironman-mini.git
+cd ~/pironman-mini
 sudo python3 install.py
 ```
 
@@ -45,7 +45,7 @@ sudo python3 install.py
 
 ## Update
 
-<https://github.com/sunfounder/pironman5/blob/main/CHANGELOG.md>
+<https://github.com/sunfounder/pironman-mini/blob/main/CHANGELOG.md>
 
 ## Compatible Systems
 
