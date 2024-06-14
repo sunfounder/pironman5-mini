@@ -8,7 +8,7 @@ from pm_dashboard.pm_dashboard import PMDashboard
 from .logger import create_get_child_logger
 from .utils import merge_dict, log_error
 
-get_child_logger = create_get_child_logger('pironman-mini')
+get_child_logger = create_get_child_logger('pironman-5-mini')
 __package_name__ = __name__.split('.')[0]
 CONFIG_PATH = resource_filename(__package_name__, 'config.json')
 
@@ -19,7 +19,7 @@ PERIPHERALS = [
 ]
 DEVICE_INFO = {
     'name': 'Pironman Mini',
-    'id': 'pironman-mini',
+    'id': 'pironman-5-mini',
     'peripherals': PERIPHERALS,
 }
 AUTO_DEFAULT_CONFIG = {
@@ -33,7 +33,7 @@ AUTO_DEFAULT_CONFIG = {
     'gpio_fan_pin': 6,
 }
 DASHBOARD_SETTINGS = {
-    "database": "pironman-mini",
+    "database": "pironman-5-mini",
     "interval": 1,
     "spc": False,
 }

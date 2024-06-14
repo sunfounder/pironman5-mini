@@ -3,8 +3,8 @@
 from tools.sf_installer import SF_Installer
 
 installer = SF_Installer(
-    name='pironman-mini',
-    friendly_name='Pironman Mini',
+    name='pironman-5-mini',
+    friendly_name='Pironman 5 Mini',
 
     # - Setup install command description if needed, default to "Installer for {friendly_name}""
     # description='Installer for Pironman Mini',
@@ -15,10 +15,10 @@ installer = SF_Installer(
     ],
 
     # - Setup Work Dir if needed, default to /opt/{name}
-    # work_dir='/opt/pironman-mini',
+    # work_dir='/opt/pironman-5-mini',
 
     # - Setup log dir if needed, default to /var/log/{name}
-    # log_dir='/var/log/pironman-mini',
+    # log_dir='/var/log/pironman-5-mini',
 
     # - Install from apt
     apt_dependencies=[
@@ -35,7 +35,7 @@ installer = SF_Installer(
 
     # - Install python source code from git
     python_source={
-        'pironman_mini': './',
+        'pironman_5_mini': './',
         'pm_auto': 'git+http://github.com/sunfounder/pm_auto.git',
         'pm_dashboard': 'git+http://github.com/sunfounder/pm_dashboard.git',
         'sf_rpi_status': 'git+http://github.com/sunfounder/sf_rpi_status.git',
@@ -56,11 +56,11 @@ installer = SF_Installer(
 
     # - Autostart settings
     # - Set service filenames
-    service_files = ['pironman-mini.service'],
+    service_files = ['pironman-5-mini.service'],
     # - Set bin files
-    bin_files = ['pironman-mini'],
+    bin_files = ['pironman-5-mini'],
 
     # - Copy device tree overlay to /boot/overlays
-    dtoverlay = ['sunfounder-pironmanmini.dtbo'],
+    dtoverlay = ['sunfounder-pironman5mini.dtbo'],
 )
 installer.install()

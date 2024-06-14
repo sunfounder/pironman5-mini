@@ -5,7 +5,7 @@ FALSE_LIST = ['false', 'False', 'FALSE', '0', 'off', 'Off', 'OFF']
 
 def main():
     import argparse
-    from .pironman_mini import PironmanMini
+    from .pironman_5_mini import Pironman5Mini
     from pm_auto.ws2812 import RGB_STYLES
     from pm_auto.fan_control import GPIO_FAN_MODES
     from pkg_resources import resource_filename
@@ -13,7 +13,7 @@ def main():
     import sys
     from os import path
 
-    CONFIG_PATH = resource_filename('pironman_mini', 'config.json')
+    CONFIG_PATH = resource_filename('pironman_5_mini', 'config.json')
 
     current_config = None
     new_auto = {}
@@ -53,10 +53,10 @@ def main():
 
     if args.command == "stop":
         import os
-        os.system('kill -9 $(pgrep -f "pironman-mini start")')
-        os.system('kill -9 $(pgrep -f "pironman-mini-service start")')
-        pironman_mini = PironmanMini()
-        pironman_mini.stop()
+        os.system('kill -9 $(pgrep -f "pironman-5-mini start")')
+        os.system('kill -9 $(pgrep -f "pironman-5-mini-service start")')
+        pironman_5_mini = Pironman5Mini()
+        pironman_5_mini.stop()
         quit()
 
     if args.rgb_color != '':
@@ -175,7 +175,7 @@ def main():
         'auto': new_auto,
     }
 
-    PironmanMini.update_config_file(new_config)
+    Pironman5Mini.update_config_file(new_config)
     if args.command == "start":
-        pironman_mini = PironmanMini()
-        pironman_mini.start()
+        pironman_5_mini = Pironman5Mini()
+        pironman_5_mini.start()
