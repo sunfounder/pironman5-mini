@@ -18,7 +18,7 @@ Quick Links:
 
 ## Links
 
-- SunFounder Online Mall &emsp; <https://www.sunfounder.com/>
+- SunFounder Online Store &emsp; <https://www.sunfounder.com/>
 - Documentation &emsp; <https://docs.sunfounder.com/en/latest/>
 
 ## Installation
@@ -34,8 +34,8 @@ Execute the installation script
 
 ```bash
 cd ~
-git clone https://github.com/sunfounder/pironman-5-mini.git
-cd ~/pironman-5-mini
+git clone https://github.com/sunfounder/pironman5-mini.git
+cd ~/pironman5-mini
 sudo python3 install.py
 ```
 
@@ -45,7 +45,7 @@ sudo python3 install.py
 
 ## Update
 
-<https://github.com/sunfounder/pironman-5-mini/blob/main/CHANGELOG.md>
+<https://github.com/sunfounder/pironman5-mini/blob/main/CHANGELOG.md>
 
 ## Compatible Systems
 

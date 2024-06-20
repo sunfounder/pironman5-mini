@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pironman_5_mini"
+name = "pironman5_mini"
 authors = [
   { name="SunFounder", email="service@sunfounder.com" },
 ]
@@ -25,14 +25,14 @@ dependencies = [
 ]
 
 [project.scripts]
-pironman-5-mini-service = "pironman_5_mini:main"
+pironman5-mini-service = "pironman5_mini:main"
 
 [tool.setuptools]
-packages = ["pironman_5_mini"]
+packages = ["pironman5_mini"]
 
 [project.urls]
-"Homepage" = "https://github.com/sunfounder/pironman-5-mini"
-"Bug Tracker" = "https://github.com/sunfounder/pironman-5-mini/issues"
+"Homepage" = "https://github.com/sunfounder/pironman5-mini"
+"Bug Tracker" = "https://github.com/sunfounder/pironman5-mini/issues"
 
 [tool.setuptools.dynamic]
-version = {attr = "pironman_5_mini.__version__"}
+version = {attr = "pironman5_mini.__version__"}

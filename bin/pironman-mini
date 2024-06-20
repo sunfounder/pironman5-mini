@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Pass all arguments to the pironman-5-mini script
+# Pass all arguments to the pironman5-mini script
 background=false
 args=()
 for arg in "$@"; do
@@ -13,8 +13,8 @@ done
 
 if [ $background == true ]; then
     echo "running at background"
-    /opt/pironman-5-mini/venv/bin/pironman-5-mini-service "$args" 2>1 1>/dev/null &
+    /opt/pironman5-mini/venv/bin/pironman5-mini-service "$args" 2>1 1>/dev/null &
 else
-    /opt/pironman-5-mini/venv/bin/pironman-5-mini-service "$@"
+    /opt/pironman5-mini/venv/bin/pironman5-mini-service "$@"
 fi
 

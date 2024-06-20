@@ -1,14 +1,14 @@
 # https://www.freedesktop.org/software/systemd/man/systemd.service.html
 [Unit]
-Description=pironman-5-mini service
+Description=pironman5-mini service
 # Need to start last to avoid gpio being occupied
 After=multi-user.target
 
 [Service]
 Type=forking
-# WorkingDirectory=/opt/pironman-5-mini
-ExecStart=/usr/local/bin/pironman-5-mini start --background
-ExecStop=/usr/local/bin/pironman-5-mini stop
+# WorkingDirectory=/opt/pironman5-mini
+ExecStart=/usr/local/bin/pironman5-mini start --background
+ExecStop=/usr/local/bin/pironman5-mini stop
 # PrivateTmp=False
 
 [Install]
