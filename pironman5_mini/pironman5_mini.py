@@ -38,7 +38,7 @@ DASHBOARD_SETTINGS = {
     "spc": False,
 }
 
-class PironmanMini:
+class Pironman5Mini:
     @log_error
     def __init__(self):
         self.log = get_child_logger('main')
