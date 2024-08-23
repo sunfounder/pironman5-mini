@@ -63,4 +63,9 @@ installer = SF_Installer(
     # - Copy device tree overlay to /boot/overlays
     dtoverlay = ['sunfounder-pironman5mini.dtbo'],
 )
-installer.install()
+installer.parser.add_argument("--disable-dashboard", action='store_true', help="Disable dashboard")
+args = installer.parser.parse_args()
+if args.disable_dashboard:
+    installer.python_source.pop('pm_dashboard')
+    installer.custom_apt_dependencies.pop(installer.custom_apt_dependencies.index('influxdb'))
+installer.main()
