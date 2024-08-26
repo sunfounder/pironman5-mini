@@ -13,9 +13,15 @@ __package_name__ = __name__.split('.')[0]
 CONFIG_PATH = resource_filename(__package_name__, 'config.json')
 
 PERIPHERALS = [
+    "storage",
+    "cpu",
+    "network",
+    "memory",
+    "history",
+    "log",
     'ws2812',
-    'gpio_fan',
-    'pwm_fan',
+    "pwm_fan_speed",
+    "gpio_fan_state",
 ]
 DEVICE_INFO = {
     'name': 'Pironman Mini',
@@ -66,8 +72,8 @@ class Pironman5Mini:
 
     @log_error
     def update_config(self, config):
-        merge_dict(self.config, config)
         self.pm_auto.update_config(self.config['auto'])
+        merge_dict(self.config, config)
         with open(CONFIG_PATH, 'w') as f:
             json.dump(self.config, f, indent=4)
 
