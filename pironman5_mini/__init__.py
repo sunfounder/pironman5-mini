@@ -23,6 +23,7 @@ def main():
                         choices=["start", "stop"],
                         nargs="?",
                         help="Command")
+    parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
     parser.add_argument("-rc", "--rgb-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
     parser.add_argument("-rb", "--rgb-brightness", nargs='?', default='', help="RGB brightness 0-100")
@@ -33,6 +34,7 @@ def main():
     parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], nargs='?', default='', help="Temperature unit")
     parser.add_argument("-gm", "--gpio-fan-mode", nargs='?', default='', help=f"GPIO fan mode, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
     parser.add_argument("-gp", "--gpio-fan-pin", nargs='?', default='', help="GPIO fan pin")
+    parser.add_argument("--background", nargs='?', default='', help="Run in background")
 
     args = parser.parse_args()
 
@@ -59,9 +61,12 @@ def main():
         pironman5_mini.stop()
         quit()
 
+    if args.version:
+        print(__version__)
+        quit()
     if args.rgb_color != '':
         if args.rgb_color == None:
-            hex = current_config['auto']['rgb_color']
+            hex = current_config['system']['rgb_color']
             if hex[0] == '#':
                 hex = hex[1:]
             r = int(hex[0:2], 16)
@@ -83,7 +88,7 @@ def main():
             new_auto['rgb_color'] = args.rgb_color
     if args.rgb_brightness != '':
         if args.rgb_brightness == None:
-            print(f"RGB brightness: {current_config['auto']['rgb_brightness']}")
+            print(f"RGB brightness: {current_config['system']['rgb_brightness']}")
         else:
             try:
                 args.rgb_brightness = int(args.rgb_brightness)
@@ -96,7 +101,7 @@ def main():
             new_auto['rgb_brightness'] = args.rgb_brightness
     if args.rgb_style != '':
         if args.rgb_style == None:
-            print(f"RGB style: {current_config['auto']['rgb_style']}")
+            print(f"RGB style: {current_config['system']['rgb_style']}")
         else:
             if args.rgb_style not in RGB_STYLES:
                 print(f"Invalid value for RGB style, it should be one of {RGB_STYLES}")
@@ -104,7 +109,7 @@ def main():
             new_auto['rgb_style'] = args.rgb_style
     if args.rgb_speed != '':
         if args.rgb_speed == None:
-            print(f"RGB speed: {current_config['auto']['rgb_speed']}")
+            print(f"RGB speed: {current_config['system']['rgb_speed']}")
         else:
             try:
                 args.rgb_speed = int(args.rgb_speed)
@@ -117,7 +122,7 @@ def main():
             new_auto['rgb_speed'] = args.rgb_speed
     if args.rgb_enable != '':
         if args.rgb_enable == None:
-            print(f"RGB enable: {current_config['auto']['rgb_enable']}")
+            print(f"RGB enable: {current_config['system']['rgb_enable']}")
         else:
             if args.rgb_enable in TRUE_LIST:
                 new_auto['rgb_enable'] = True
@@ -128,7 +133,7 @@ def main():
                 quit()
     if args.rgb_led_count != '':
         if args.rgb_led_count == None:
-            print(f"RGB LED count: {current_config['auto']['rgb_led_count']}")
+            print(f"RGB LED count: {current_config['system']['rgb_led_count']}")
         else:
             try:
                 args.rgb_led_count = int(args.rgb_led_count)
@@ -141,7 +146,7 @@ def main():
             new_auto['rgb_led_count'] = args.rgb_led_count
     if args.temperature_unit != '':
         if args.temperature_unit == None:
-            print(f"Temperature unit: {current_config['auto']['temperature_unit']}")
+            print(f"Temperature unit: {current_config['system']['temperature_unit']}")
         else:
             if args.temperature_unit not in ['C', 'F']:
                 print(f"Invalid value for Temperature unit, it should be C or F")
@@ -149,7 +154,7 @@ def main():
             new_auto['temperature_unit'] = args.temperature_unit
     if args.gpio_fan_mode != '':
         if args.gpio_fan_mode == None:
-            print(f"GPIO fan mode: {current_config['auto']['gpio_fan_mode']}")
+            print(f"GPIO fan mode: {current_config['system']['gpio_fan_mode']}")
         else:
             try:
                 args.gpio_fan_mode = int(args.gpio_fan_mode)
@@ -162,7 +167,7 @@ def main():
             new_auto['gpio_fan_mode'] = args.gpio_fan_mode
     if args.gpio_fan_pin != '':
         if args.gpio_fan_pin == None:
-            print(f"GPIO fan pin: {current_config['auto']['gpio_fan_pin']}")
+            print(f"GPIO fan pin: {current_config['system']['gpio_fan_pin']}")
         else:
             try:
                 args.gpio_fan_pin = int(args.gpio_fan_pin)
@@ -170,9 +175,12 @@ def main():
                 print(f"Invalid value for GPIO fan pin, it should be an integer")
                 quit()
             new_auto['gpio_fan_pin'] = args.gpio_fan_pin
+    if args.background != '':
+        print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
+        quit()
 
     new_config = {
-        'auto': new_auto,
+        'system': new_auto,
     }
 
     Pironman5Mini.update_config_file(new_config)

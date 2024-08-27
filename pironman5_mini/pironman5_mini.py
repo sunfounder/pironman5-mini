@@ -49,7 +49,7 @@ class Pironman5Mini:
     def __init__(self):
         self.log = get_child_logger('main')
         self.config = {
-            'auto': AUTO_DEFAULT_CONFIG,
+            'system': AUTO_DEFAULT_CONFIG,
         }
         if not os.path.exists(CONFIG_PATH):
             with open(CONFIG_PATH, 'w') as f:
@@ -57,9 +57,10 @@ class Pironman5Mini:
         else:
             with open(CONFIG_PATH, 'r') as f:
                 config = json.load(f)
+            self.config = self.upgrade_config(config)
             merge_dict(self.config, config)
 
-        self.pm_auto = PMAuto(self.config['auto'],
+        self.pm_auto = PMAuto(self.config['system'],
                               peripherals=PERIPHERALS,
                               get_logger=get_child_logger)
         self.pm_dashboard = PMDashboard(device_info=DEVICE_INFO,
@@ -70,9 +71,15 @@ class Pironman5Mini:
         self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
         self.pm_dashboard.set_on_config_changed(self.update_config)
 
+    def upgrade_config(self, config):
+        ''' upgrade old config to new config converting 'auto' to'system' '''
+        if 'auto' in config:
+            return {'system': config['auto']}
+        return config
+
     @log_error
     def update_config(self, config):
-        self.pm_auto.update_config(self.config['auto'])
+        self.pm_auto.update_config(self.config['system'])
         merge_dict(self.config, config)
         with open(CONFIG_PATH, 'w') as f:
             json.dump(self.config, f, indent=4)
