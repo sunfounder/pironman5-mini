@@ -57,7 +57,6 @@ class Pironman5Mini:
         else:
             with open(CONFIG_PATH, 'r') as f:
                 config = json.load(f)
-            self.config = self.upgrade_config(config)
             merge_dict(self.config, config)
 
         self.pm_auto = PMAuto(self.config['system'],
@@ -70,12 +69,6 @@ class Pironman5Mini:
                                         get_logger=get_child_logger)
         self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
         self.pm_dashboard.set_on_config_changed(self.update_config)
-
-    def upgrade_config(self, config):
-        ''' upgrade old config to new config converting 'auto' to'system' '''
-        if 'auto' in config:
-            return {'system': config['auto']}
-        return config
 
     @log_error
     def update_config(self, config):
