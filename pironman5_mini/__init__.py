@@ -21,7 +21,7 @@ def main():
 
     parser = argparse.ArgumentParser(description='Pironman Mini')
     parser.add_argument("command",
-                        choices=["start", "stop"],
+                        choices=["start", "restart", "stop"],
                         nargs="?",
                         help="Command")
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
@@ -57,6 +57,10 @@ def main():
 
     if args.debug_level != None:
         debug_level = args.debug_level.upper()
+
+    if args.command == "restart":
+        print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
+        quit()
 
     if args.command == "stop":
         import os
