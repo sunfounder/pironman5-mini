@@ -16,6 +16,7 @@ def main():
     CONFIG_PATH = resource_filename('pironman5_mini', 'config.json')
 
     current_config = None
+    debug_level = 'INFO'
     new_auto = {}
 
     parser = argparse.ArgumentParser(description='Pironman Mini')
@@ -25,6 +26,7 @@ def main():
                         help="Command")
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
+    parser.add_argument("-dl", "--debug-level", choices=['debug', 'info', 'warning', 'error', 'critical'], help="Debug level")
     parser.add_argument("-rc", "--rgb-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
     parser.add_argument("-rb", "--rgb-brightness", nargs='?', default='', help="RGB brightness 0-100")
     parser.add_argument("-rs", "--rgb-style", choices=RGB_STYLES, nargs='?', default='', help="RGB style")
@@ -52,6 +54,9 @@ def main():
     if args.config:
         print(json.dumps(current_config, indent=4))
         quit()
+
+    if args.debug_level != None:
+        debug_level = args.debug_level.upper()
 
     if args.command == "stop":
         import os
@@ -186,4 +191,5 @@ def main():
     Pironman5Mini.update_config_file(new_config)
     if args.command == "start":
         pironman5_mini = Pironman5Mini()
+        pironman5_mini.set_debug_level(debug_level)
         pironman5_mini.start()
