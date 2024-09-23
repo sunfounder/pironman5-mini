@@ -36,6 +36,8 @@ def main():
     parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], nargs='?', default='', help="Temperature unit")
     parser.add_argument("-gm", "--gpio-fan-mode", nargs='?', default='', help=f"GPIO fan mode, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
     parser.add_argument("-gp", "--gpio-fan-pin", nargs='?', default='', help="GPIO fan pin")
+    parser.add_argument("-fl", "--gpio-fan-led", nargs='?', default='', help="GPIO fan LED state True/False")
+    parser.add_argument("-fp", "--gpio-fan-led-pin", nargs='?', default='', help="GPIO fan LED pin")
     parser.add_argument("--background", nargs='?', default='', help="Run in background")
 
     args = parser.parse_args()
@@ -184,6 +186,27 @@ def main():
                 print(f"Invalid value for GPIO fan pin, it should be an integer")
                 quit()
             new_auto['gpio_fan_pin'] = args.gpio_fan_pin
+    if args.gpio_fan_led != '':
+        if args.gpio_fan_led == None:
+            print(f"GPIO fan LED state: {current_config['system']['gpio_fan_led']}")
+        else:
+            if args.gpio_fan_led in TRUE_LIST:
+                new_auto['gpio_fan_led'] = True
+            elif args.gpio_fan_led in FALSE_LIST:
+                new_auto['gpio_fan_led'] = False
+            else:
+                print(f"Invalid value for GPIO fan LED state, it should be True or False")
+                quit()
+    if args.gpio_fan_led_pin != '':
+        if args.gpio_fan_led_pin == None:
+            print(f"GPIO fan LED pin: {current_config['system']['gpio_fan_led_pin']}")
+        else:
+            try:
+                args.gpio_fan_led_pin = int(args.gpio_fan_led_pin)
+            except ValueError:
+                print(f"Invalid value for GPIO fan LED pin, it should be an integer")
+                quit()
+            new_auto['gpio_fan_led_pin'] = args.gpio_fan_led_pin
     if args.background != '':
         print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
         quit()
