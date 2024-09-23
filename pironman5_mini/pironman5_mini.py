@@ -7,7 +7,7 @@ from pm_auto.pm_auto import PMAuto
 from pm_dashboard.pm_dashboard import PMDashboard
 from .logger import create_get_child_logger
 from .utils import merge_dict, log_error
-from .__version__ import __version__
+from .version import __version__
 
 get_child_logger = create_get_child_logger('pironman5-mini')
 __package_name__ = __name__.split('.')[0]
