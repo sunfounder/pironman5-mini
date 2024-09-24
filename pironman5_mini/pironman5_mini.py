@@ -41,7 +41,10 @@ AUTO_DEFAULT_CONFIG = {
     'rgb_brightness': 100,
     'rgb_style': 'rainbow',
     'rgb_speed': 0,
-    'gpio_fan_pin': 6,
+    'gpio_fan_pin': 5,
+    'gpio_fan_mode': 1,
+    'gpio_fan_led': 'follow',
+    'gpio_fan_led_pin': 6,
 }
 DASHBOARD_SETTINGS = {
     "database": "pironman5-mini",
@@ -83,6 +86,7 @@ class Pironman5Mini:
 
     @log_error
     def update_config(self, config):
+        self.log.debug(f'Update_config: {config}')
         self.pm_auto.update_config(config['system'])
         merge_dict(self.config, config)
         with open(CONFIG_PATH, 'w') as f:
