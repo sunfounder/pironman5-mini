@@ -84,6 +84,7 @@ sudo /opt/pironman5-mini/venv/bin/pip3 install .
 
 sudo systemctl stop pironman5-mini.service
 sudo systemctl start pironman5-mini.service
+sudo systemctl restart pironman5-mini.service
 sudo pironman5-mini start
 ```
 
