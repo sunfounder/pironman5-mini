@@ -36,7 +36,7 @@ def main():
     parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], nargs='?', default='', help="Temperature unit")
     parser.add_argument("-gm", "--gpio-fan-mode", nargs='?', default='', help=f"GPIO fan mode, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
     parser.add_argument("-gp", "--gpio-fan-pin", nargs='?', default='', help="GPIO fan pin")
-    parser.add_argument("-fl", "--gpio-fan-led", nargs='?', default='', help="GPIO fan LED state True/False")
+    parser.add_argument("-fl", "--gpio-fan-led", nargs='?', default='', help="GPIO fan LED state on/off/follow")
     parser.add_argument("-fp", "--gpio-fan-led-pin", nargs='?', default='', help="GPIO fan LED pin")
     parser.add_argument("--background", nargs='?', default='', help="Run in background")
 
@@ -190,13 +190,11 @@ def main():
         if args.gpio_fan_led == None:
             print(f"GPIO fan LED state: {current_config['system']['gpio_fan_led']}")
         else:
-            if args.gpio_fan_led in TRUE_LIST:
-                new_auto['gpio_fan_led'] = True
-            elif args.gpio_fan_led in FALSE_LIST:
-                new_auto['gpio_fan_led'] = False
-            else:
-                print(f"Invalid value for GPIO fan LED state, it should be True or False")
+            state = args.gpio_fan_led.lower()
+            if state not in ['on', 'off', 'follow']:
+                print(f"Invalid value for GPIO fan LED state, it should be on, off or follow")
                 quit()
+            new_auto['gpio_fan_led'] = state
     if args.gpio_fan_led_pin != '':
         if args.gpio_fan_led_pin == None:
             print(f"GPIO fan LED pin: {current_config['system']['gpio_fan_led_pin']}")
