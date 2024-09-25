@@ -1,9 +1,9 @@
 from .version import __version__
 
-TRUE_LIST = ['true', 'True', 'TRUE', '1', 'on', 'On', 'ON']
-FALSE_LIST = ['false', 'False', 'FALSE', '0', 'off', 'Off', 'OFF']
-
 def main():
+    TRUE_LIST = ['true', 'True', 'TRUE', '1', 'on', 'On', 'ON']
+    FALSE_LIST = ['false', 'False', 'FALSE', '0', 'off', 'Off', 'OFF']
+
     import argparse
     from .pironman5_mini import Pironman5Mini
     from pm_auto.ws2812 import RGB_STYLES
