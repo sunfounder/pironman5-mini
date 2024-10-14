@@ -1,97 +1,66 @@
-# Pironman 5 Mini
-
-Pironman Mini case
+# SunFounder Pironman 5 Mini
+This repository is for Pironman 5 Mini. you can buy it on [our website](https://www.sunfounder.com/), or search sunfounder in Amazon.
 
 Quick Links:
 
-- [Pironman 5 Mini](#pironman-5-mini)
-  - [About Pironman 5 Mini](#about-pironman-5-mini)
-  - [Links](#links)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Update](#update)
-  - [Compatible Systems](#compatible-systems)
-  - [Debug](#debug)
-  - [About SunFounder](#about-sunfounder)
-  - [Contact us](#contact-us)
+ * [About this kit](#about_this_kit)
+ * [Update](#update)
+ * [Trouble Shootings](#trouble)
+ * [About SunFounder](#about_sunfounder)
+ * [License](#license)
+ * [Contact us](#contact_us)
 
-## About Pironman 5 Mini
+<a id="about_this_kit"></a>
+## About this kit:
 
-## Links
+Elevate your Raspberry Pi 5 with the Pironman 5 Mini, our top-tier case designed for unmatched style and functionality. It's the perfect blend of aesthetics and performance:
 
-- SunFounder Online Store &emsp; <https://www.sunfounder.com/>
-- Documentation &emsp; <https://docs.sunfounder.com/en/latest/>
 
-## Installation
 
-For systems that don't have git, python3 pre-installed you need to install them first
+<a id="update"></a>
+## Update:
+2024-08-16:
+- Add Batocera Linux tutorial
+- Modify overall document structure
 
-```bash
-sudo apt-get update
-sudo apt-get install git python3 -y
-```
+2024-05-23:
+- Significantly optimize the entire document content.
+- Add note of join SunFounder Facebook group.
 
-Execute the installation script
+2024-01-05:
+- Update some incorrect descriptions.
 
-```bash
-cd ~
-git clone https://github.com/sunfounder/pironman5-mini.git
-cd ~/pironman5-mini
-sudo python3 install.py
-```
+2024-01-03:
+- First release
 
-## Usage
+<a id="trouble"></a>
+## Trouble Shootings:
 
--
-
-## Update
-
-<https://github.com/sunfounder/pironman5-mini/blob/main/CHANGELOG.md>
-
-## Compatible Systems
-
-Systems that passed the test on the Raspberry Pi 5:
-<font size=1>
-<!-- https://apps.timwhitlock.info/emoji/tables/unicode#block-6c-other-additional-symbols -->
-  | system |   is compatible ? |
-  | :---   | :---:   |
-  | Raspberry Pi OS Desktop - bookworm (32/64 bit) | &#x2705; |
-  | Raspberry Pi OS lite - bookworm (32/64 bit) | &#x2705; |
-  | Ubuntu Desktop 23.10 (64 bit) | &#x2705; |
-  | Ubuntu Server 23.10 (64 bit) | &#x2705; |
-
-</font>
-
-## Debug
-
-Debug commands
-
-```bash
-sudo /opt/pironman5-mini/venv/bin/pip3 uninstall sf_rpi_status -y
-sudo /opt/pironman5-mini/venv/bin/pip3 install git+https://github.com/sunfounder/sf_rpi_status.git
-
-cd ~/pironman5-mini
-sudo /opt/pironman5-mini/venv/bin/pip3 uninstall pironman5-mini -y
-sudo /opt/pironman5-mini/venv/bin/pip3 install .
-
-cd ~/pm_auto
-sudo /opt/pironman5-mini/venv/bin/pip3 uninstall pm_auto -y
-sudo /opt/pironman5-mini/venv/bin/pip3 install .
-
-cd ~/pm_dashboard
-sudo /opt/pironman5-mini/venv/bin/pip3 uninstall pm_dashboard -y
-sudo /opt/pironman5-mini/venv/bin/pip3 install .
-
-sudo systemctl stop pironman5-mini.service
-sudo systemctl start pironman5-mini.service
-sudo systemctl restart pironman5-mini.service
-sudo pironman5-mini start
-```
-
+<a id="about_sunfounder"></a>
 ## About SunFounder
 SunFounder is a company focused on STEAM education with products like open source robots, development boards, STEAM kit, modules, tools and other smart devices distributed globally. In SunFounder, we strive to help elementary and middle school students as well as hobbyists, through STEAM education, strengthen their hands-on practices and problem-solving abilities. In this way, we hope to disseminate knowledge and provide skill training in a full-of-joy way, thus fostering your interest in programming and making, and exposing you to a fascinating world of science and engineering. To embrace the future of artificial intelligence, it is urgent and meaningful to learn abundant STEAM knowledge.
 
-## Contact us
+<a id="license"></a>
+## License
+This is the code for Pironman.
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied wa rranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+Pironman 5 comes with ABSOLUTELY NO WARRANTY; for details run ./show w. This is free software, and you are welcome to redistribute it under certain conditions; run ./show c for details.
+
+SunFounder, Inc., hereby disclaims all copyright interest in the program 'pironman5' (which makes passes at compilers).
+
+Mike Huang, 21 August 2015
+
+Mike Huang, Chief Executive Officer
+
+Email: service@sunfounder.com
+
+<a id="contact_us"></a>
+## Contact us:
 website:
     www.sunfounder.com
 
