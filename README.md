@@ -19,18 +19,8 @@ Elevate your Raspberry Pi 5 with the Pironman 5 Mini, our top-tier case designed
 
 <a id="update"></a>
 ## Update:
-2024-08-16:
-- Add Batocera Linux tutorial
-- Modify overall document structure
 
-2024-05-23:
-- Significantly optimize the entire document content.
-- Add note of join SunFounder Facebook group.
-
-2024-01-05:
-- Update some incorrect descriptions.
-
-2024-01-03:
+2024-10-18:
 - First release
 
 <a id="trouble"></a>
@@ -49,9 +39,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-Pironman 5 comes with ABSOLUTELY NO WARRANTY; for details run ./show w. This is free software, and you are welcome to redistribute it under certain conditions; run ./show c for details.
+Pironman 5 Mini comes with ABSOLUTELY NO WARRANTY; for details run ./show w. This is free software, and you are welcome to redistribute it under certain conditions; run ./show c for details.
 
-SunFounder, Inc., hereby disclaims all copyright interest in the program 'pironman5' (which makes passes at compilers).
+SunFounder, Inc., hereby disclaims all copyright interest in the program 'pironman5_mini' (which makes passes at compilers).
 
 Mike Huang, 21 August 2015
 
