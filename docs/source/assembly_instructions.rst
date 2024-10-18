@@ -17,6 +17,10 @@
 2. Assembly Instructions
 =============================================
 
+
+.. image:: img/pironman5mini.png
+    :width: 400
+
 Before assembling the Pironman, please first verify that all parts and components have been included. If there are any missing or damaged components, please contact SunFounder immediately at service@sunfounder.com to resolve the issue as soon as possible.
 
 **Tips**
@@ -25,23 +29,32 @@ Before assembling the Pironman, please first verify that all parts and component
 * Before installation, sort and stack the components to find them more quickly.
 * Repeatedly check the connections of FFC and FPC cables to avoid poor contact.
 
-* :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
 
-**Complete Assembly and Boot Guide: Pironman 5 with NVMe SSD**
 
-If you are using an NVMe SSD, follow this video to assemble and configure the Pironman 5.
+* :download:`[PDF]Component List and Assembly of Pironman 5 Mini <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0999V10-a0009999-pironman5-mini.pdf>`
 
-.. raw:: html
 
-    <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Complete Assembly and Boot Guide: Pironman 5 with Micro SD Card**
+.. * :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
 
-If you are using a Micro SD card, follow this video to assemble and configure the Pironman 5.
 
-.. raw:: html
 
-    <iframe width="700" height="500" src="https://www.youtube.com/embed/-5rTwJ0oMVM?si=je5SaLccHzjjEhuD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+.. **Complete Assembly and Boot Guide: Pironman 5 with NVMe SSD**
+
+.. If you are using an NVMe SSD, follow this video to assemble and configure the Pironman 5.
+
+.. .. raw:: html
+
+..     <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+.. **Complete Assembly and Boot Guide: Pironman 5 with Micro SD Card**
+
+.. If you are using a Micro SD card, follow this video to assemble and configure the Pironman 5.
+
+.. .. raw:: html
+
+..     <iframe width="700" height="500" src="https://www.youtube.com/embed/-5rTwJ0oMVM?si=je5SaLccHzjjEhuD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 

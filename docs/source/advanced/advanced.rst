@@ -17,6 +17,9 @@
 6. Advanced
 =========================
 
+.. image:: ../img/pironman5mini.png
+    :width: 400
+
 
 This chapter is a detailed description of all the components in Pironman, as well as the associated software configuration.
 
@@ -26,11 +29,5 @@ This chapter is a detailed description of all the components in Pironman, as wel
     
     features
     io_board
-    hdmi_adapter
-    nvme_pip
-    microsd_extender
-    power_switch_conventor
-    tower_cooler
-    oled_screen
     fans
     login_rpi/login_rpi

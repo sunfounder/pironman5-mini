@@ -18,7 +18,7 @@
 View and Control from Dashboard
 =========================================
 
-Once you have successfully installed the ``pironman5`` module, the ``pironman5.service`` will start automatically upon reboot.
+Once you have successfully installed the ``pironman5-mini`` module, the ``pironman5-mini.service`` will start automatically upon reboot.
 
 Now you can open the monitoring page in your browser to see the information about your Raspberry Pi, configure the RGB, and control the fan, etc. The page link is: ``http://<ip>:34001``.
 
@@ -75,7 +75,7 @@ The History page allows you to view historical data. Check the data you want to 
 Log
 ------------
 
-The Log page is used to view the logs of the currently running Pironman5 service. The Pironman5 service includes multiple sub-services, each with its own log. Select the log you want to view, and you can see the log data on the right. If it is blank, it may mean there is no log content.
+The Log page is used to view the logs of the currently running Pironman5-mini service. The Pironman5-mini service includes multiple sub-services, each with its own log. Select the log you want to view, and you can see the log data on the right. If it is blank, it may mean there is no log content.
 
 * Each log has a fixed size of 10MB. When it exceeds this size, a second log will be created.
 * The number of logs for the same service is limited to 10. If the number exceeds this limit, the oldest log will be automatically deleted.

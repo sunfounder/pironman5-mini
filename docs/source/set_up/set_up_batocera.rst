@@ -53,7 +53,6 @@ If you have installed the Batocera.linux OS, you can remotely log in to this sys
 
 #. Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
    
-   * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
    * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
    
    .. note::

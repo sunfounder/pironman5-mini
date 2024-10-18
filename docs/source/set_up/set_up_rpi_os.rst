@@ -17,7 +17,7 @@
 Set Up on Raspberry Pi/Ubuntu/Kali/Homebridge OS
 ==================================================
 
-If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your Raspberry Pi, you will need to configure the Pironman 5 using the command line. Detailed tutorials can be found below:
+If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your Raspberry Pi, you will need to configure the Pironman 5 Mini using the command line. Detailed tutorials can be found below:
 
 .. note::
 
@@ -26,7 +26,7 @@ If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your 
 
 Configuring Shutdown to Deactivate GPIO Power
 ------------------------------------------------------------
-To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from remaining active post-shutdown, it's essential to configure the Raspberry Pi for GPIO power deactivation.
+To prevent the RGB fans, powered by the Raspberry Pi GPIO, from remaining active post-shutdown, it's essential to configure the Raspberry Pi for GPIO power deactivation.
 
 #. Manually edit the ``EEPROM`` configuration file with this command:
 
@@ -45,7 +45,7 @@ To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from 
 #. Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
 
 
-Downloading and Installing the ``pironman5`` Module
+Downloading and Installing the ``pironman5-mini`` Module
 -----------------------------------------------------------
 
 #. For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
@@ -56,18 +56,18 @@ Downloading and Installing the ``pironman5`` Module
      sudo apt-get install git -y
      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. Proceed to download code from GitHub and install the ``pironman5`` module .
+#. Proceed to download code from GitHub and install the ``pironman5-mini`` module .
 
    .. code-block:: shell
 
       cd ~
-      git clone https://github.com/sunfounder/pironman5.git
-      cd ~/pironman5
+      git clone https://github.com/sunfounder/pironman5-mini.git
+      cd ~/pironman5-mini
       sudo python3 install.py
 
    After successful installation, a system reboot is required to activate the installation. Follow the on-screen reboot prompt.
 
-   Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
+   Upon reboot, the ``pironman5-mini.service`` will start automatically. Here are the primary configurations for Pironman 5:
    
    * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
    * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
@@ -76,12 +76,12 @@ Downloading and Installing the ``pironman5`` Module
     
      RGB fans won't spin unless the temperature hits 60°C. For different activation temperatures, see :ref:`cc_control_fan`.
 
-#. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
+#. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5-mini.service``.
 
    .. code-block:: shell
      
-      sudo systemctl restart pironman5.service
+      sudo systemctl restart pironman5-mini.service
    
-   * ``restart``: Use this command to apply any changes made to the settings of pironman 5.
-   * ``start/stop``: Enable or disable the ``pironman5.service``.
-   * ``status``: Check the operational status of the ``pironman5`` program using the ``systemctl`` tool.
+   * ``restart``: Use this command to apply any changes made to the settings of pironman 5 Mini.
+   * ``start/stop``: Enable or disable the ``pironman5-mini.service``.
+   * ``status``: Check the operational status of the ``pironman5-mini`` program using the ``systemctl`` tool.

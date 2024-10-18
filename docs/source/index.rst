@@ -12,46 +12,42 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-|link_pironman5| - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5
+|link_pironman5_mini| - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5
 ================================================================================
 
-Thanks for choosing our |link_pironman5|.
+Thanks for choosing our |link_pironman5_mini|.
 
-.. note::
+.. .. note::
 
-    This document is available in the following languages.
+..     This document is available in the following languages.
 
-    * |link_german_tutorials|
-    * |link_jp_tutorials|
-    * |link_en_tutorials|
-    * |link_fr_tutorials|
-    * |link_es_tutorials|
-    * |link_it_tutorials|
+..     * |link_german_tutorials|         
+..     * |link_jp_tutorials|
+..     * |link_en_tutorials|
+..     * |link_fr_tutorials|
+..     * |link_es_tutorials|
+..     * |link_it_tutorials|
     
-    Please click on the respective links to access the document in your preferred language.
+..     Please click on the respective links to access the document in your preferred language.
 
-.. image:: img/pironman5.JPG
+.. image:: img/pironman5mini.png
     :width: 400
     
 
 
-Elevate your Raspberry Pi 5 with the |link_pironman5|, our top-tier case designed for unmatched style and functionality. It's the perfect blend of aesthetics and performance:
+Elevate your Raspberry Pi 5 with the |link_pironman5_mini|, our top-tier case designed for unmatched style and functionality. It's the perfect blend of aesthetics and performance:
 
 * Raspberry Pi 5 mini PC
-* 0.96" OLED Display showing Raspberry Pi's CPU usage, temperature, disk usage, IP address, RAM usage etc.
-* Tower cooler can cool a 100% CPU load Pi to 39°C at 25°C room temperature
-* 2 RGB Fans, with GPIO control
-* 1 PWM Fan on the Tower Cooler is controlled by the Raspberry Pi system.
+* An RGB Fans, with GPIO control
+* An Active Cooler
 * Supports four (PCIe Gen 2.0 / PCIe Gen 3.0) NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280.
 * 4 WS2812 Addressable RGB LED light up the whole case with cool light effect
-* IR Receiver for multi-media center like Kodi or Volumio
 * Retro metal power button for safe shut down
 * External GPIO extender with pin name label, for easy access
-* Equipped with a spring-loaded socket for easy card removal
 * Aluminum main body with clear Acrylic side panel
 * Features two standard HDMI ports
 
-The |link_pironman5| is not just a case; it's an upgrade that transforms your Raspberry Pi 5 into a powerful, efficient, and stylish device. Get yours now and experience the future of Raspberry Pi cases!
+The |link_pironman5_mini| is not just a case; it's an upgrade that transforms your Raspberry Pi 5 into a powerful, efficient, and stylish device. Get yours now and experience the future of Raspberry Pi cases!
 
 .. note::
 

@@ -15,7 +15,7 @@
 Set Up on Home Assistant
 ============================================
 
-If you have installed the Home Assistant system, you will need to add the necessary add-ons to Home Assistant and start them to get the Pironman 5 working.
+If you have installed the Home Assistant system, you will need to add the necessary add-ons to Home Assistant and start them to get the Pironman 5 Mini working.
 
 .. note::
 
@@ -24,7 +24,7 @@ If you have installed the Home Assistant system, you will need to add the necess
 1. Log in to Home Assistant
 -----------------------------
 
-* After starting Pironman 5, it is recommended to plug in an Ethernet cable directly. This way, you can open your computer browser and enter: ``homeassistant.local:8123`` to access Home Assistant.
+* After starting Pironman 5 Mini, it is recommended to plug in an Ethernet cable directly. This way, you can open your computer browser and enter: ``homeassistant.local:8123`` to access Home Assistant.
 
   .. image:: img/home_login.png
    :width: 90%
@@ -44,7 +44,7 @@ If you have installed the Home Assistant system, you will need to add the necess
 2. Add the SunFounder Add-ons Repository
 ----------------------------------------------------
 
-The functionality of Pironman 5 is installed on Home Assistant in the form of add-ons. First, you need to add the **SunFounder** add-ons repository.
+The functionality of Pironman 5 Mini is installed on Home Assistant in the form of add-ons. First, you need to add the **SunFounder** add-ons repository.
 
 #. Open **Settings** -> **Add-ons**.
 
@@ -74,7 +74,7 @@ The functionality of Pironman 5 is installed on Home Assistant in the form of ad
 3. Install the **Pi Config Wizard** Add-on
 ------------------------------------------------------
 
-The **Pi Config Wizard** can help enable the configurations needed for Pironman 5, such as I2C and SPI. If not needed afterward, it can be removed.
+The **Pi Config Wizard** can help enable the configurations needed for Pironman 5 Mini, such as I2C and SPI. If not needed afterward, it can be removed.
 
 #. Find **Pi Config Wizard** in the SunFounder add-ons list and click to enter.
 
@@ -132,10 +132,15 @@ The **Pi Config Wizard** can help enable the configurations needed for Pironman 
     * Check if this add-on is started. If not, click **START**.
     * After starting, click **OPEN WEB UI**, then click **MOUNT** to confirm if I2C and SPI are enabled.
 
-4. Install the **Pironman 5** Add-on
+
+
+.. .. 这里要改PIRONMAN5 MINI的ADD ON 图
+
+
+4. Install the **Pironman 5 Mini** Add-on
 ---------------------------------------------
 
-Now officially start installing the **Pironman 5** add-on.
+Now officially start installing the **Pironman 5 Mini** add-on.
 
 #. Open **Settings** -> **Add-ons**.
 
@@ -147,7 +152,7 @@ Now officially start installing the **Pironman 5** add-on.
    .. image:: img/home_addon.png
       :width: 90%
 
-#. Find **Pironman 5** in the **SunFounder** add-ons list and click to enter.
+#. Find **Pironman 5 Mini** in the **SunFounder** add-ons list and click to enter.
 
    .. image:: img/home_pironman5_addon.png
       :width: 90%
@@ -162,7 +167,7 @@ Now officially start installing the **Pironman 5** add-on.
    .. image:: img/home_start_pironman5.png
       :width: 90%
 
-#. Now you can click **OPEN WEB UI** to open the Pironman 5 web page. You can also check the option to display the Web UI in the sidebar. This will allow you to see the Pironman 5 option in the left sidebar of Home Assistant, and click to open the Pironman 5 page.
+#. Now you can click **OPEN WEB UI** to open the Pironman 5 Mini web page. You can also check the option to display the Web UI in the sidebar. This will allow you to see the Pironman 5 Mini option in the left sidebar of Home Assistant, and click to open the Pironman 5 Mini page.
 
    .. image:: img/home_web_ui.png
       :width: 90%
@@ -174,4 +179,4 @@ Now officially start installing the **Pironman 5** add-on.
 
 .. note::
 
-    For more information and usage of this Pironman 5 web page, please refer to: :ref:`view_control_dashboard`.
+    For more information and usage of this Pironman 5 Mini web page, please refer to: :ref:`view_control_dashboard`.

@@ -16,21 +16,21 @@
 
 Control with Commands
 ========================================
-In addition to viewing data from the Pironman 5 and controlling various devices through the Dashboard, you can also use commands to control them.
+In addition to viewing data from the Pironman 5 Mini and controlling various devices through the Dashboard, you can also use commands to control them.
 
 .. note::
 
-  * For the **Home Assistant** system, you can only monitor and control the Pironman 5 through the dashboard by opening the webpage at ``http://<ip>:34001``.
-  * For the **Batocera.linux** system, you can only monitor and control the Pironman 5 via commands. It is important to note that any changes to the configuration require a restart of the service using ``pironman5 restart`` to take effect.
+  * For the **Home Assistant** system, you can only monitor and control the Pironman 5 Mini through the dashboard by opening the webpage at ``http://<ip>:34001``.
+  * It is important to note that any changes to the configuration require a restart of the service using ``pironman5-mini restart`` to take effect.
 
 View the Basic Configurations
 -----------------------------------
 
-The ``pironman5`` module offers basic configurations for Pironman, which you can review with the following command.
+The ``pironman5-mini`` module offers basic configurations for Pironman, which you can review with the following command.
 
 .. code-block:: shell
 
-  pironman5 -c
+  pironman5-mini -c
 
 The standard configurations appear as follows:
 
@@ -52,63 +52,71 @@ The standard configurations appear as follows:
 
 Customize these configurations to fit your needs.
 
-Use ``pironman5`` or ``pironman5 -h`` for instructions.
+Use ``pironman5-mini`` or ``pironman5-mini -h`` for instructions.
 
 .. code-block::
 
-  usage: pironman5-service [-h] [-c] [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]]
-                          [-rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]] [-rp [RGB_SPEED]]
-                          [-re [RGB_ENABLE]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]]
-                          [{start,stop}]
+  usage: pironman5-mini-service [-h] [-v] [-c] [-dl {debug,info,warning,error,critical}] [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]] [-rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]]
+                                [-rp [RGB_SPEED]] [-re [RGB_ENABLE]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]] [-fl [GPIO_FAN_LED]] [-fp [GPIO_FAN_LED_PIN]]
+                                [--background [BACKGROUND]]
+                                [{start,restart,stop}]
 
-  Pironman5
+  Pironman5 Mini
 
-  positional arguments:
-    {start,stop}          Command
+  ositional arguments:
+   {start,restart,stop}  Command
 
-  options:
-    -h, --help            show this help message and exit
-    -c, --config          Show config
-    -rc [RGB_COLOR], --rgb-color [RGB_COLOR]
-                          RGB color in hex format with or without # (e.g. #FF0000 or 00aabb)
-    -rb [RGB_BRIGHTNESS], --rgb-brightness [RGB_BRIGHTNESS]
-                          RGB brightness 0-100
-    -rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}], --rgb-style [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]
-                          RGB style
-    -rp [RGB_SPEED], --rgb-speed [RGB_SPEED]
-                          RGB speed 0-100
-    -re [RGB_ENABLE], --rgb-enable [RGB_ENABLE]
-                          RGB enable True/False
-    -rl [RGB_LED_COUNT], --rgb-led-count [RGB_LED_COUNT]
-                          RGB LED count int
-    -u [{C,F}], --temperature-unit [{C,F}]
-                          Temperature unit
-    -gm [GPIO_FAN_MODE], --gpio-fan-mode [GPIO_FAN_MODE]
-                          GPIO fan mode, 0: Always On, 1: Performance, 2: Cool, 3: Balanced, 4: Quiet
-    -gp [GPIO_FAN_PIN], --gpio-fan-pin [GPIO_FAN_PIN]
-                          GPIO fan pin
-
+  ptions:
+   -h, --help            show this help message and exit
+   -v, --version         Show version
+   -c, --config          Show config
+   -dl {debug,info,warning,error,critical}, --debug-level {debug,info,warning,error,critical}
+                         Debug level
+   -rc [RGB_COLOR], --rgb-color [RGB_COLOR]
+                         RGB color in hex format without # (e.g. 00aabb)
+   -rb [RGB_BRIGHTNESS], --rgb-brightness [RGB_BRIGHTNESS]
+                         RGB brightness 0-100
+   -rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}], --rgb-style [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]
+                         RGB style
+   -rp [RGB_SPEED], --rgb-speed [RGB_SPEED]
+                         RGB speed 0-100
+   -re [RGB_ENABLE], --rgb-enable [RGB_ENABLE]
+                         RGB enable True/False
+   -rl [RGB_LED_COUNT], --rgb-led-count [RGB_LED_COUNT]
+                         RGB LED count int
+   -u [{C,F}], --temperature-unit [{C,F}]
+                         Temperature unit
+   -gm [GPIO_FAN_MODE], --gpio-fan-mode [GPIO_FAN_MODE]
+                         GPIO fan mode, 0: Always On, 1: Performance, 2: Cool, 3: Balanced, 4: Quiet
+   -gp [GPIO_FAN_PIN], --gpio-fan-pin [GPIO_FAN_PIN]
+                         GPIO fan pin
+   -fl [GPIO_FAN_LED], --gpio-fan-led [GPIO_FAN_LED]
+                         GPIO fan LED state on/off/follow
+   -fp [GPIO_FAN_LED_PIN], --gpio-fan-led-pin [GPIO_FAN_LED_PIN]
+                         GPIO fan LED pin
+   --background [BACKGROUND]
+                         Run in background
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+  Each time you modify the status of ``pironman5-mini.service``, you need to use the following command to make the configuration changes take effect.
 
   .. code-block:: shell
 
-    sudo systemctl restart pironman5.service
+    sudo systemctl restart pironman5-mini.service
 
 
-* Verify the ``pironman5`` program status using the ``systemctl`` tool.
+* Verify the ``pironman5-mini`` program status using the ``systemctl`` tool.
 
   .. code-block:: shell
 
-    sudo systemctl status pironman5.service
+    sudo systemctl status pironman5-mini.service
 
 * Alternatively, inspect the program-generated log files.
 
   .. code-block:: shell
 
-    cat /opt/pironman5/log
-
+    ls /var/log/pironman5-mini/
+    cat /var/log/pironman5-mini/main.log
 
 Control RGB LEDs
 ----------------------
@@ -116,51 +124,51 @@ The board features 4 WS2812 RGB LEDs, offering customizable control. Users can t
 
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+  Each time you modify the status of ``pironman5-mini.service``, you need to use the following command to make the configuration changes take effect.
 
   .. code-block:: shell
 
-    sudo systemctl restart pironman5.service
+    sudo systemctl restart pironman5-mini.service
 
 * To modify the on and off state of the RGB LEDs, ``true`` to turn on the RGB LEDs, ``false`` to turn them off.
 
 .. code-block:: shell
 
-  pironman5 -re true
+  pironman5-mini -re true
 
 * To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  pironman5-mini -rc fe1a1a
 
 * To change the brightness of the RGB LED (range: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  pironman5-mini -rb 100
 
 * To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
 .. note::
 
-  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5 -rc``.
+  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5-mini -rc``.
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  pironman5-mini -rs breathing
 
 * To modify the speed of change (range: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  pironman5-mini -rp 80
 
 * The default setup includes 4 RGB LEDs. Connect additional LEDs and update the count using:
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  pironman5-mini -rl 12
 
 .. _cc_control_fan:
 
@@ -170,11 +178,11 @@ The IO expansion board supports up to two 5V non-PWM fans. Both fans are control
 
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+  Each time you modify the status of ``pironman5-mini.service``, you need to use the following command to make the configuration changes take effect.
 
   .. code-block:: shell
 
-    sudo systemctl restart pironman5.service
+    sudo systemctl restart pironman5-mini.service
 
 * You can use command to configure the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate. 
 
@@ -183,7 +191,7 @@ For instance, if set to **1: Performance** mode, the RGB fans will activate at 5
 
 .. code-block:: shell
 
-  sudo pironman5 -gm 3
+  sudo pironman5-mini -gm 3
 
 * **4: Quiet**: The RGB fans will activate at 70°C.
 * **3: Balanced**: The RGB fans will activate at 67.5°C.
@@ -195,50 +203,4 @@ For instance, if set to **1: Performance** mode, the RGB fans will activate at 5
 
 .. code-block:: shell
 
-  sudo pironman5 -gp 18
-
-
-Check the OLED Screen
------------------------------------
-
-When you have installed the ``pironman5`` library, the OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address, and it shows this every time you reboot.
-
-If your OLED screen does not display any content, you need to first check if the OLED's FPC cable is connected properly.
-
-Then you can check the program log to see what might be the problem through the following command.
-
-.. code-block:: shell
-
-  cat /var/log/pironman5/
-
-Or check if the OLED's i2c address 0x3C is recognized:
-
-.. code-block:: shell
-
-  i2cdetect -y 1
-
-Checkout the Infrared Receiver
----------------------------------------
-
-To utilize the IR receiver, verify its connection and install the necessary module:
-
-* Test the connection:
-
-  .. code-block:: shell
-
-    sudo ls /dev |grep lirc
-
-* Install the ``lirc`` module:
-
-  .. code-block:: shell
-
-    sudo apt-get install lirc -y
-
-* Now, test the IR Receiver by running the following command. 
-
-  .. code-block:: shell
-
-    mode2 -d /dev/lirc0
-
-* After running the command, press a button on the remote control, and the code of that button will be printed.
-
+  sudo pironman5-mini -gp 18

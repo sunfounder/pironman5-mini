@@ -17,9 +17,10 @@
 4. Set up or Install Software
 ================================================
 
-Now that the system has been written to either the Micro SD or NVMe SSD, you can insert them into the Pironman 5 slot. Then press the power button to turn on the device.
+Now that the system has been written to either the Micro SD or NVMe SSD, you can insert them into the Raspberry Pi slot. Then press the power button to turn on the device.
 
-After powering on, you will see the various power LEDs lit up, but the OLED screen, RGB LEDs, and RGB fans (the two fans on the side) will not be operational yet, as they need to be configured. If there is a screen garbling issue, please ignore it for now; it will be resolved after configuration.
+After powering on, you will see the various power LEDs lit up, but the RGB LEDs, and RGB fans will not be operational yet, 
+as they need to be configured. If there is a screen garbling issue, please ignore it for now; it will be resolved after configuration.
 
 Before configuring, you need to boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
 
@@ -31,7 +32,6 @@ You can then proceed to select the configuration tutorial based on your system.
 
     set_up_rpi_os 
     set_up_home_assistant
-    set_up_batocera
 
 
 **About Power Button**
