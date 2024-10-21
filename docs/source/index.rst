@@ -38,14 +38,13 @@ Thanks for choosing our |link_pironman5_mini|.
 Elevate your Raspberry Pi 5 with the |link_pironman5_mini|, our top-tier case designed for unmatched style and functionality. It's the perfect blend of aesthetics and performance:
 
 * Raspberry Pi 5 mini PC
-* An RGB Fans, with GPIO control
+* An RGB Fan, with GPIO control
 * An Active Cooler
 * Supports four (PCIe Gen 2.0 / PCIe Gen 3.0) NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280.
-* 4 WS2812 Addressable RGB LED light up the whole case with cool light effect
+* 4 WS2812 Addressable RGB LED light up with cool light effect
 * Retro metal power button for safe shut down
 * External GPIO extender with pin name label, for easy access
 * Aluminum main body with clear Acrylic side panel
-* Features two standard HDMI ports
 
 The |link_pironman5_mini| is not just a case; it's an upgrade that transforms your Raspberry Pi 5 into a powerful, efficient, and stylish device. Get yours now and experience the future of Raspberry Pi cases!
 

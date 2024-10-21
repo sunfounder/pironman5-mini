@@ -37,16 +37,18 @@ The standard configurations appear as follows:
 .. code-block:: 
 
   {
-      "auto": {
-          "rgb_color": "#0a1aff",
-          "rgb_brightness": 50,
-          "rgb_style": "breathing",
+      "system": {
+          "rgb_color": "feff00",
+          "rgb_brightness": 30,
+          "rgb_style": "hue_cycle",
           "rgb_speed": 50,
           "rgb_enable": true,
-          "rgb_led_count": 4,
+          "rgb_led_count": 12,
           "temperature_unit": "C",
-          "gpio_fan_mode": 2,
-          "gpio_fan_pin": 6
+          "gpio_fan_pin": 5,
+          "gpio_fan_mode": 0,
+          "gpio_fan_led": "follow",
+          "gpio_fan_led_pin": 6
       }
   }
 
